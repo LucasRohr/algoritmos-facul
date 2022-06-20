@@ -1,16 +1,17 @@
 /*
-Este programa pega dados de trabalho e família para cálculo do salário bruto, exibindo o resultado na tela
+Este programa pega dados de trabalho e famï¿½lia para cï¿½lculo do salï¿½rio bruto, exibindo o resultado na tela
 */
 
 #include <stdio.h>
+
 int main(void) {
     const float SALARIO_FAMILIA_FILHO = 56.2;
 
-    int horas_trabalhadas_mes; /*Declaração da variável das horas trabalhadas em um mês*/
-    float valor_recebido_hora; /*Declaração da variável para receber o valor de ponto flutuante para valor de trabalho por hora */
-    int numero_filhos; /*Declaração da variável para obter o número de filhos abaixo de 14 anos*/
+    int horas_trabalhadas_mes; /*Declaraï¿½ï¿½o da variï¿½vel das horas trabalhadas em um mï¿½s*/
+    float valor_recebido_hora; /*Declaraï¿½ï¿½o da variï¿½vel para receber o valor de ponto flutuante para valor de trabalho por hora */
+    int numero_filhos; /*Declaraï¿½ï¿½o da variï¿½vel para obter o nï¿½mero de filhos abaixo de 14 anos*/
 
-    float salario_familia; /*Declaração da variável para calcular o salário família com base no número de filhos informado*/
+    float salario_familia; /*Declaraï¿½ï¿½o da variï¿½vel para calcular o salï¿½rio famï¿½lia com base no nï¿½mero de filhos informado*/
     float salario_bruto;
 
     printf("Digite quantas horas foram trabalhadas no mes:\n");
