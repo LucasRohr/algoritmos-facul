@@ -163,7 +163,7 @@ int main() {
                     printf("\nCompra efetuada:\n");
                     printf("ID das acoes: %d\n", CODIGO_GERDAU);
                     printf("Quantidade de lotes: %d\n", quantidade_lote);
-                    printf("Preco do investimento: R$ %.2f\n\n", total_faturado_gerdau);
+                    printf("Preco do investimento: R$ %.2f\n\n", (quantidade_lote * VALOR_UNIDADE_GERDAU));
                 } else {
                     printf("\nA compra nao pode ser efetuada por falta de estoque :(\n\n");
                 }
@@ -182,7 +182,7 @@ int main() {
                     printf("\nCompra efetuada:\n");
                     printf("ID das acoes: %d\n", CODIGO_PETROBRAS);
                     printf("Quantidade de lotes: %d\n", quantidade_lote);
-                    printf("Preco do investimento: R$ %.2f\n\n", total_vendas);
+                    printf("Preco do investimento: R$ %.2f\n\n", (quantidade_lote * VALOR_UNIDADE_PETROBRAS));
                 } else {
                     printf("\nA compra nao pode ser efetuada por falta de estoque :(\n\n");
                 }
@@ -201,7 +201,7 @@ int main() {
                     printf("\nCompra efetuada:\n");
                     printf("ID das acoes: %d\n", CODIGO_AZALEIA);
                     printf("Quantidade de lotes: %d\n", quantidade_lote);
-                    printf("Preco do investimento: R$ %.2f\n\n", total_vendas);
+                    printf("Preco do investimento: R$ %.2f\n\n", (quantidade_lote * VALOR_UNIDADE_AZALEIA));
                 } else {
                     printf("\nA compra nao pode ser efetuada por falta de estoque :(\n\n");
                 }
@@ -220,7 +220,7 @@ int main() {
                     printf("\nCompra efetuada:\n");
                     printf("ID das acoes: %d\n", CODIGO_GRENDENE);
                     printf("Quantidade de lotes: %d\n", quantidade_lote);
-                    printf("Preco do investimento: R$ %.2f\n\n", total_vendas);
+                    printf("Preco do investimento: R$ %.2f\n\n", (quantidade_lote * VALOR_UNIDADE_GRENDENE));
                 } else {
                     printf("\nA compra nao pode ser efetuada por falta de estoque :(\n\n");
                 }
