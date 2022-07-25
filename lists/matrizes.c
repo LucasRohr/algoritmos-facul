@@ -26,7 +26,7 @@ int main() {
     // 1)
 
     for (i = 0; i < NUM; i++) {
-        printf("Digite o nome do produto:");
+        printf("Digite o nome do produto %d:", i + 1);
         gets(produtos[i]);
     }
 
@@ -60,6 +60,8 @@ int main() {
         for (j = NUM_MES_JULHO; j < NUM_MESES; j++) {
             soma_unidades_vendidas += vendas[indice_produto_busca][j];
         }
+
+        printf("A soma de unidades vendidas do produto %s entre Julho e Dezembro eh: %d\n\n", nome_produto, soma_unidades_vendidas);
     } else {
         printf("\n\nO produto %s nao esta contido na listagem de produtos vendidos, logo nao ha vendas!\n\n", nome_produto);
     }
@@ -84,19 +86,19 @@ int main() {
         for (j = 0; j < NUM_MESES; j++) {
             vendas[indice_produto_busca][j] = 0;
         }
+
+         printf("\n\nNova matriz de vendas:\n\n");
+
+        for (i = 0; i < NUM; i++) {
+            printf("|");
+            for (j = 0; j < NUM_MESES; j++) {
+                printf("\t%d\t|", vendas[i][j]);
+            }
+            printf("\n");
+        }
     } else {
         printf("\n\nO nome de produto existente informado nao existe na lista :(\n\n");
         indice_produto_busca = -1;
-    }
-
-    printf("\n\nNova matriz de vendas:\n\n");
-
-    for (i = 0; i < NUM; i++) {
-        printf("|");
-        for (j = 0; j < NUM_MESES; j++) {
-            printf("\t%d\t|", vendas[i][j]);
-        }
-        printf("\n");
     }
 
     return 0;
