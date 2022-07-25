@@ -50,7 +50,7 @@ int main() {
     if (indice_produto_busca < NUM) {
         printf("\n\nO produto %s esta localizado no indice %d do arranjo\n\n", nome_produto, indice_produto_busca);
     } else {
-        printf("\n\nProduto %s nao encontrado :(\n\n");
+        printf("\n\nProduto %s nao encontrado :(\n\n", nome_produto);
         indice_produto_busca = -1;
     }
 
@@ -61,7 +61,7 @@ int main() {
             soma_unidades_vendidas += vendas[indice_produto_busca][j];
         }
     } else {
-        printf("\n\nO produto %s nao esta contido na listagem de produtos vendidos, logo nao ha vendas!\n\n");
+        printf("\n\nO produto %s nao esta contido na listagem de produtos vendidos, logo nao ha vendas!\n\n", nome_produto);
     }
 
     // 5)
@@ -79,8 +79,8 @@ int main() {
     }
 
     if (indice_produto_busca < NUM) {
-        produtos[indice_produto_busca] = nome_novo_produto;
-
+        strcpy(produtos[indice_produto_busca], nome_novo_produto);
+ 
         for (j = 0; j < NUM_MESES; j++) {
             vendas[indice_produto_busca][j] = 0;
         }
