@@ -17,8 +17,8 @@ int main() {
     int indice_busca_nome;
     char maior_nome [NUM_STRINGS];
     char maior_sobrenome [NUM_STRINGS];
-    char nome_completo [NUM_STRINGS];
 
+    char nome_completo [NUM_NOME_COMPLETO];
 
     for (i = 0; i < NUM_LISTAS; i++) {
         printf("Digite o nome %d:\n", i + 1);
@@ -32,29 +32,31 @@ int main() {
 
     indice_busca_nome = 0;
 
-    while (indice_busca_nome < NUM_LISTAS && strlen(lista_nomes[indice_busca_nome]) > TAMANHO_STRING_BUSCA) {
+    while (indice_busca_nome < NUM_LISTAS && strlen(lista_nomes[indice_busca_nome]) <= TAMANHO_STRING_BUSCA) {
         indice_busca_nome++;
     }
 
-    stpcpy(maior_nome, lista_nomes[indice_busca_nome]);
+    strcpy(maior_nome, lista_nomes[indice_busca_nome]);
 
     indice_busca_nome = 0;
 
-    while (indice_busca_nome < NUM_LISTAS && strlen(lista_sobrenomes[indice_busca_nome]) > TAMANHO_STRING_BUSCA) {
+    while (indice_busca_nome < NUM_LISTAS && strlen(lista_sobrenomes[indice_busca_nome]) <= TAMANHO_STRING_BUSCA) {
         indice_busca_nome++;
     }
 
-    stpcpy(maior_sobrenome, lista_sobrenomes[indice_busca_nome]);
+    strcpy(maior_sobrenome, lista_sobrenomes[indice_busca_nome]);
 
-    printf("Maior nome %s:\n", maior_nome);
-    printf("Maior sobrenome %s:\n", maior_sobrenome);
+    printf("Maior nome: %s\n", maior_nome);
+    printf("Maior sobrenome: %s\n", maior_sobrenome);
 
     // Concatenar nome e sobrenome encotrados e botar em variavel
 
-    strcpy(nome_completo, strcat(maior_nome, " "));
-    strcpy(nome_completo, strcat(nome_completo, maior_sobrenome));
+    maior_nome[strlen(maior_nome)] = ' ';
+    maior_nome[strlen(maior_nome) + 1] = '\0';
 
-    printf("Nome completo %s:\n", nome_completo);
+    strcpy(nome_completo, strcat(maior_nome, maior_sobrenome));
+
+    printf("Nome completo: %s\n", nome_completo);
 
     return 0;
 }
