@@ -2,13 +2,13 @@
 
 #define TAMANHO_PRODUTOS_VENDIDOS 50
 #define TAMANHO_LOJAS 4
+#define ESTOQUE_MINIMO_RELATORIO 10
 
 int main() {
     int estoque [TAMANHO_PRODUTOS_VENDIDOS][TAMANHO_LOJAS];
     int estoque_total [TAMANHO_PRODUTOS_VENDIDOS] = {0};
-    int codigos_estoques_inferiores [TAMANHO_PRODUTOS_VENDIDOS];
 
-    int i, j;
+    int i, j; // Iteradores da matriz de estoque
 
     for(i = 0; i < TAMANHO_PRODUTOS_VENDIDOS; i++) {
         for(j = 0; j < TAMANHO_LOJAS; j++) {
@@ -19,15 +19,16 @@ int main() {
 
     for(i = 0; i < TAMANHO_PRODUTOS_VENDIDOS; i++) {
         for(j = 0; j < TAMANHO_LOJAS; j++) {
+            // soma ao estoque total do produto de i todos os estoques do produto
+            // para todas as lojas de j
             estoque_total[i] += estoque[i][j];
         }
     }
 
     for(i = 0; i < TAMANHO_PRODUTOS_VENDIDOS; i++) {
         for(j = 0; j < TAMANHO_LOJAS; j++) {
-            // ver se o codigo já está na lista ou não para adicionar
-            if(estoque[i][j] < 10) {
-                codigos_estoques_inferiores[i] = i;
+            if(estoque[i][j] < ESTOQUE_MINIMO_RELATORIO) {
+                printf("O produto de codigo %d possui menos de %d unidades na loja %d", i + 1, ESTOQUE_MINIMO_RELATORIO, j + 1);
             }
         }
     }
