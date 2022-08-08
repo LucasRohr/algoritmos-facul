@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1659983248 source:c:\codeblocks\trabalho-jogo\main.c
+	<stdio.h>
+	"raylib.h"
+	<string.h>
+
+1658250507 c:\dev-libs\raylib_x86-windows\include\raylib.h
+	<stdarg.h>
+	<stdbool.h>
+
+1659981016 source:c:\codeblocks\trabalho-jogo\movimento.c
+	<stdio.h>
+	"raylib.h"
+
