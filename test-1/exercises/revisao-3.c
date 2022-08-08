@@ -18,7 +18,7 @@ int main() {
     int lugar [TAMANHO_FILAS][TAMANHO_POLTRONAS] = {LIVRE};
 
     int i, j; // Iteradores da matriz
-    int fila_entrada, poltrona_entrada;
+    int fila_entrada, poltrona_entrada; // Entradas do usuario
     int total_ocupadas = 0, total_livres = 0;
 
     char opcao;
@@ -36,6 +36,8 @@ int main() {
                     printf("Digite a poltrona desejada:\n");
                     scanf("%d", &poltrona_entrada);
 
+                    // valor entrado - 1 pois para o usuario, a contagem das listas
+                    // nao inicia em zero, mas em 1
                     if (lugar[fila_entrada - 1][poltrona_entrada -1] == LIVRE) {
                         lugar[fila_entrada - 1][poltrona_entrada -1] = OCUPADO;
                         total_ocupadas++;
@@ -60,7 +62,7 @@ int main() {
                 printf("Fila %d: ", i + 1);
 
                 for(j = 0; j < TAMANHO_POLTRONAS; j++) {
-                    printf("|%d|", j + 1);
+                    printf("|%d| ", j + 1);
                 }
 
                 printf("\n");
@@ -71,10 +73,10 @@ int main() {
             printf("Digite a fila da poltrona desejada:\n");
             scanf("%d", &fila_entrada);
 
-            printf("Digite o numero poltrona desejada:\n");
+            printf("Digite o numero da poltrona desejada:\n");
             scanf("%d", &poltrona_entrada);
 
-            if (lugarp[fila_entrada - 1][poltrona_entrada - 1] == OCUPADO) {
+            if (lugar[fila_entrada - 1][poltrona_entrada - 1] == OCUPADO) {
                 printf("\nLugar ocupado!\n");
             } else {
                 printf("\nLugar livre!\n");
