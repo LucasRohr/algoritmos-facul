@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1660587464 source:c:\users\aluno\desktop\pratica9\main.c
+	<stdio.h>
+	"raylib.h"
+	<time.h>
+	<stdlib.h>
+
+1658250507 c:\dev-libs\raylib_x86-windows\include\raylib.h
+	<stdarg.h>
+	<stdbool.h>
+
