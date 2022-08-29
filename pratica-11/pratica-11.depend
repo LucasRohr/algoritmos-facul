@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1661796292 source:c:\codeblocks\pratica-11\main.c
+	<stdio.h>
+	<string.h>
+
+1661796246 source:c:\codeblocks\pratica-11\busca-arquivo.c
+	<stdio.h>
+	<string.h>
+
