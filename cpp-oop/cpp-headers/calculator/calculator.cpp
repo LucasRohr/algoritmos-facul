@@ -1,7 +1,6 @@
 
 #include <iomanip>
 #include <cmath>
-
 #include "calculator.h"
 
 Calculator::Calculator() {
@@ -43,6 +42,10 @@ float Calculator::multiply(float value_1, float value_2) {
 }
 
 float Calculator::divide(float value_1, float value_2) {
+    if (value_2 == 0) {
+        return -1;
+    }
+
     return value_1 / value_2;
 }
 

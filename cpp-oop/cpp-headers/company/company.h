@@ -1,6 +1,8 @@
 #include <iostream>
-
 #include "../employee/employee.h"
+
+#ifndef COMPANY_H
+#define COMPANY_H
 
 using namespace std;
 
@@ -28,3 +30,5 @@ class Company {
 
         void print_info();
 };
+
+#endif

@@ -1,5 +1,8 @@
 #include <iostream>
 
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
+
 using namespace std;
 
 class Calculator {
@@ -30,3 +33,5 @@ class Calculator {
 
         void print_info();
 };
+
+#endif

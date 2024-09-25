@@ -1,5 +1,4 @@
 #include <iomanip>
-
 #include "employee.h"
 
 Employee::Employee() {
@@ -68,6 +67,7 @@ int Employee::cube(int value) {
 void Employee::print_info() {
     cout << "Employee info: " << endl
         << std::setw(6) << "Name: " << name << endl
-        << std::setw(9) << "Address: " << address << endl
-        << calculator.print_info();
+        << std::setw(9) << "Address: " << address << endl;
+
+    calculator.print_info();
 }

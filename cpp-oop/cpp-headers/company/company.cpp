@@ -1,5 +1,4 @@
 #include <iomanip>
-
 #include "company.h"
 
 Company::Company(
@@ -37,7 +36,8 @@ Employee Company::getEmployee2() {
 
 void Company::print_info() {
     cout << "Company info: " << endl
-        << std::setw(6) << "Name: " << name << endl
-        << employee_1.print_info()
-        << employee_2.print_info();
+        << std::setw(6) << "Name: " << name << endl;
+
+    employee_1.print_info();
+    employee_2.print_info();
 }

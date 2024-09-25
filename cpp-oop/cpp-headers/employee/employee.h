@@ -1,6 +1,8 @@
 #include <iostream>
-
 #include "../calculator/calculator.h"
+
+#ifndef EMPLOYEE_H
+#define EMPLOYEE_H
 
 using namespace std;
 
@@ -38,3 +40,5 @@ class Employee {
 
         void print_info();
 };
+
+#endif
