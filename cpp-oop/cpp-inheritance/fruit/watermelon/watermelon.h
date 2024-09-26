@@ -3,7 +3,7 @@
 #ifndef WATERMELON_H
 #define WATERMELON_H
 
-class Watermelon: private Fruit {
+class Watermelon: public Fruit {
     private:
         double extra_price;
         bool is_season;

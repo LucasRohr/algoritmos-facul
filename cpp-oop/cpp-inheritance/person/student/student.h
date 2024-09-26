@@ -3,7 +3,7 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-class Student: private Person {
+class Student: public Person {
     private:
         double grade;
 

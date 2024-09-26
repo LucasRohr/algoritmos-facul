@@ -7,6 +7,19 @@
 #include "./fruit/watermelon/watermelon.h"
 
 int main() {
+    // Inheritance tests
+
+    Banana banana = Banana("banana massa", "prata");
+    Watermelon watermelon = Watermelon("melancia do juca", 2.50, false);
+
+    banana.set_price(9.90);
+    watermelon.set_price(7.50);
+
+    cout << "Banana with tax price: " << banana.calculate_price(0.1) << endl;
+    cout << "Watermelon final price: " << watermelon.calculate_final_price() << endl;
+
+    // Polymorphism tests
+
     Person* person;
     int option;
 

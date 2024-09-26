@@ -3,7 +3,7 @@
 #ifndef BANANA_H
 #define BANANA_H
 
-class Banana: private Fruit {
+class Banana: public Fruit {
     private:
         string type;
 

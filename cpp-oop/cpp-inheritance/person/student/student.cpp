@@ -19,7 +19,7 @@ double Student::get_grade() {
 
 void Student::print_data() {
     cout << "Student data: " << endl;
-        
+
     Person::print_data();
 
     cout << std::setw(7) << "Grade: " << grade << endl;

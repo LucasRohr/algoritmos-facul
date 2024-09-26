@@ -3,7 +3,7 @@
 #ifndef PROGRAMMER_H
 #define PROGRAMMER_H
 
-class Programmer: private Person {
+class Programmer: public Person {
     private:
         string fav_language;
 
