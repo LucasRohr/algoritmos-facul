@@ -14,13 +14,13 @@ class Person {
         Person();
         Person(string def_name, int def_age);
 
-        void set_name(string new_name);
-        string get_name();
+        virtual void set_name(string new_name);
+        virtual string get_name();
 
-        void set_age(int new_age);
-        int get_age();
+        virtual void set_age(int new_age);
+        virtual int get_age();
 
-        void print_data();
+        virtual void print_data();
 };
 
 #endif

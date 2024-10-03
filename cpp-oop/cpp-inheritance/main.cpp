@@ -21,7 +21,7 @@ int main() {
     // Polymorphism tests
 
     Person* person;
-    int option;
+    int option = -1;
 
     string name_input;
     int age_input;
@@ -34,6 +34,10 @@ int main() {
 
         cout << "Digite uma opcao de pessoa (1 - Programador, 2 - Aluno, 0 - Sair):" << endl;
         cin >> option;
+
+        if (option == 0) {
+            return 0;
+        }
 
         if (option == 1) {
             cout << "Digite o nome do programador: " << endl;
