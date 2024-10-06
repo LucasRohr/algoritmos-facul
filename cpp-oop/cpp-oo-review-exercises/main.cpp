@@ -35,6 +35,8 @@ int main() {
     // =================
 
     Atleta* a;
+    Nadador nadadorPoli;
+    Corredor corredorPoli;
     InformacoesAtleta informacoes_atleta;
     int opcao = 0;
 
@@ -54,36 +56,27 @@ int main() {
     cin >> idade_input;
 
     if (opcao == 1) {
-        Nadador nadador = Nadador();
-
         cout << "Digite uma categoria: " << endl;
         cin >> categoria_input;
 
-        nadador.set_nome(nome_input);
-        nadador.set_idade(idade_input);
-        nadador.set_categoria(categoria_input);
+        nadadorPoli = Nadador(nome_input, idade_input, categoria_input);
 
-        a = &nadador;
+        a = &nadadorPoli;
     }
 
     if (opcao == 2) {
-        Corredor corredor = Corredor();
-
         cout << "Digite o peso: " << endl;
         cin >> peso_input;
 
         cout << "Digite o nome da competicao do corredor: " << endl;
         cin >> nome_competicao_input;
 
-        corredor.set_nome(nome_input);
-        corredor.set_idade(idade_input);
-        corredor.set_peso(peso_input);
-        corredor.set_competicao(Competicao(nome_competicao_input, data));
+        corredorPoli = Corredor(nome_input, idade_input, peso_input, Competicao(nome_competicao_input, data));
 
-        a = &corredor;
+        a = &corredorPoli;
     }
 
-    cout << "infos antes da alteracao" << endl;
+    cout << endl << "infos antes da alteracao" << endl << endl;
 
     informacoes_atleta.imprime_exclusivos_atleta(a);
     informacoes_atleta.imprime_informacoes_atleta(a);
@@ -96,7 +89,7 @@ int main() {
         c->set_peso(89);
     }
 
-    cout << "infos depois da alteracao" << endl;
+    cout << "infos depois da alteracao" << endl << endl;
 
     informacoes_atleta.imprime_exclusivos_atleta(a);
     informacoes_atleta.imprime_informacoes_atleta(a);
