@@ -23,7 +23,7 @@ int main() {
     cout << endl;
 
     // Alterar data da competicao do corredor
-    corredor.get_competicao().set_data(Data(23, data.get_mes(), data.get_ano()));
+    corredor.set_competicao(Competicao(corredor.get_competicao().get_nome(), Data(23, data.get_mes(), data.get_ano())));
     corredor.get_competicao().imprime_data();
 
     cout << endl;
