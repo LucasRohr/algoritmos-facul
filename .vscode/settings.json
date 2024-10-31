@@ -48,6 +48,10 @@
     "__split_buffer": "cpp",
     "deque": "cpp",
     "unordered_map": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "queue": "cpp",
+    "stack": "cpp",
+    "__node_handle": "cpp",
+    "optional": "cpp"
   }
 }

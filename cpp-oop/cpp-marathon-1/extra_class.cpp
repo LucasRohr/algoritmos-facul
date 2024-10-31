@@ -37,6 +37,11 @@ int main() {
         for (int i = 0; i < TAM; i++) {
             for (int j = 0; j < TAM; j++) {
                 cin >> mat[i][j];
+            }
+        }
+
+        for (int i = 0; i < TAM; i++) {
+            for (int j = 0; j < TAM; j++) {
                 has_2048 = mat[i][j] == 2048;
             }
         }

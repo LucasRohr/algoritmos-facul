@@ -1,0 +1,131 @@
+IMPORTANTE:
+Identificar e descrever significa:
+• Identificar quais parâmetros devem ser recebidos na implementação de uma
+função.
+• Quais são as variáveis de controle a serem utilizadas para gestão das
+estruturas.
+• Como elas devem ser atualizadas de acordo com as operações.
+
+
+================================================================================================
+
+
+Exercicio 1)
+
+Utilizando os conceitos de tipos abstratos de dados estudados até o momento, identifique e
+descreva o que deve ser feito para que sejam implementadas em uma lista linear as
+seguintes operações:
+
+• retornar a quantidade de elementos na lista;
+
+    - int conta_elementos(int num_elementos)
+    - usa a variavel num_elementos, apenas retorna ela
+    - essa variavel deve ser atualizada somando ou subtraindo o valor inteiro a cada insercao/remocao
+
+• verificar se a lista está vazia;
+
+    - bool verifica_vazia(int num_elementos)
+    - retorna se num_elementos == 0
+
+• verificar se a lista está cheia;
+
+    - bool verifica_cheia(int num_elementos)
+    - retorna se num_elementos == max (max = total maximo de elementos)
+
+• inserir um elemento em uma posição específica;
+
+    - void insere_posicao(T* array, T valor, int posicao)
+    - percorre o array usando o ponteiro "array" recebido até chegar na posicao passada
+    - a partir dai, cria um novo laco "botando pra frente" todos os outros elementos seguintes
+    - insere o valor na posicao
+
+• remover um elemento de uma posição específica e retornar este elemento;
+
+    - T remove_elemento(T* array, int posicao)
+    - percorre o array usando o ponteiro "array" recebido até chegar na posicao passada
+    - armazena o elemento numa variavel
+    - "bora pra tras" cada elemento do restante do array
+    - retorna a variavel com o elemento removido
+
+• retornar um elemento de uma posição específica;
+
+    - T encontra_elemento(T* array, int posicao)
+    - percorre o array usando o ponteiro "array" recebido até chegar na posicao passada
+    - retorna o elemento
+
+• retornar a posição de um elemento específico
+
+    - int encontra_posicao(T* array, T valor)
+    - percorre o array usando o ponteiro "array" recebido comparando o valor do nó com o "valor" passado
+    - usa uma variavel contador, incrementando ela a cada iteracao na lista
+    - quando achar o valor, retorna o contador
+
+Exercicio 2)
+
+Da mesma forma, identifique e descreva o que deve ser feito para que sejam
+implementadas em uma pilha as seguintes operações:
+
+• verificar se a pilha está vazia;
+
+    - bool verifica_vazia(int topo)
+    - retorna se topo == -1 (topo = variavel de controle do topo da pilha)
+    - "topo" deve ser incrementado/decrementado a cada insercao/remocao na pilha
+
+• verificar se a pilha está cheia;
+
+    - bool verifica_cheia(int topo)
+    - retorna se topo == max (max = tamanho maximo da pilha)
+
+• inserir um elemento no topo da pilha;
+    
+    - void push(T* pilha, T valor, int* topo)
+    - usa variavel de iteracao e percorre a pilha usando o ponteiro "pilha"
+    - percorre até topo* == max, entao insere o valor no topo e depoos faz topo++
+
+• remover um elemento do topo da pilha;
+
+    - void pop(T* pilha, T valor, int* topo)
+    - usa variavel de iteracao e percorre a pilha usando o ponteiro "pilha"
+    - percorre até topo* == max, entao faz o indice do topo ser nulo e depois faz topo--
+
+• inspecionar um elemento do topo da pilha.
+
+    - void busca_topo(T* pilha, int* topo)
+    - usa variavel de iteracao e percorre a pilha usando o ponteiro "pilha"
+    - percorre até topo* == max e retorna o valor do indice
+
+Exercicio 3)
+
+Agora, identifique e descreva o que deve ser feito para que sejam implementadas em uma
+fila as seguintes operações:
+
+• verificar se a fila está vazia;
+
+    - bool verifica_vazia(int first)
+    - retorna se first == -1, ou seja, o primeiro elemento nao existe
+    - first deve ser atualizado ao inserir o primeiro elemento na lista
+
+• verificar se a fila está cheia;
+
+    - bool verifica_cheia(int first, int last)
+    - retorna se first == 0 e last == tamanho do array - 1
+    - first deve ser atualizado ao inserir o primeiro elemento na lista
+    - last deve ser atualizado ao inserir o ultimo elemento na lista
+
+• remover e retornar o elemento do início da fila;
+
+    - T remove_elemento(T* fila, int first)
+    - guarda fila[first] em uma variavel
+    - deixa fila[first] nulo
+    - incrementa first++
+    - retorna o fila[first] da variavel
+
+• consultar o elemento do início da fila;
+
+    - T encontra_elemento(T* fila, int first)
+    - retorna fila[first]
+
+• obter o tamanho da fila.
+
+    - int conta_elementos(int last)
+    - retorna last + 1
