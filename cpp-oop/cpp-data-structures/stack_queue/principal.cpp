@@ -67,22 +67,27 @@ int main() {
 
     int removed_element;
 
+    cout << "== Listas ==" << endl << endl;
+
     /**
      * Tenta inserir o elemento 5 na posição 0 (zero) da lista.
      * Verifica se o elemento foi inserido por meio do código de retorno 
      * da função.
      */
-    if(sl.insert(5, 0) == 0)
+    if(sl.insert(5, 0) == 0) {
         cout << "Elemento inserido com sucesso na lista!" << endl;
-    cout << "\n";
+        cout << "\n";
+    }
 
-    sl.insert(5, 1);
-    sl.insert(6, 2);
+    sl.insert(1, 1);
+    sl.insert(2, 2);
 
     sl.print();
     sl.depup();
     //sl.remove_interval(0, 1);
     sl.print();
+
+    cout << endl << "== Filas ==" << endl << endl;
 
     /**
      * Tenta remover um elemento da fila vazia.
@@ -105,6 +110,8 @@ int main() {
     sq.enqueueWithPriority(4);
 
     sq.print();
+
+    cout << endl << "== Pilhas ==" << endl << endl;
 
     /**
      * Tenta inserir o elemento 4 na pilha.

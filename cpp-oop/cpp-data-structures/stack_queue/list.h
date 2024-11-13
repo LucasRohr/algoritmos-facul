@@ -43,7 +43,7 @@ class List {
         /**
          * Localiza na lista a primeira ocorrência do elemento indicado.
          */
-        virtual int search(T& element) = 0;
+        virtual int search(const T& element) = 0;
 
         // Retorna quantas ocorrencias do elemento tem na lista
         virtual int count_element(T& element) = 0;
@@ -51,7 +51,7 @@ class List {
         // Remove ocorrências múltiplas de elementos na lista
         virtual void depup() = 0;
 
-        // Remove ocorrências múltiplas de elementos na lista
+        // Remove elementos em um intervalo na lista
         virtual int remove_interval(int begin, int end) = 0;
 
         virtual void print() = 0;

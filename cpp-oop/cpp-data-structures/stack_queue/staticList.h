@@ -30,7 +30,7 @@ class StaticList: public List<T> {
         int insert(T element, int pos);
         int remove(int pos, T& result);
         int get(int pos, T& result);
-        int search(T& element);
+        int search(const T& element);
         int count_element(T& element);
         void depup();
         int remove_interval(int begin, int end);
@@ -82,7 +82,7 @@ int StaticList<T>::insert(T element, int pos) {
 }
 
 /**
- * Retorna 0 se o elemento foi inserido na lista.
+ * Retorna 0 se o elemento foi removido da lista.
  * Retorna 1 se a posição informada não está correta.
  * Retorna 3 se a lista estiver vazia.
  */
@@ -108,25 +108,30 @@ int StaticList<T>::remove(int pos, T& result) {
 
 
 /**
- * Retorna 0 se o elemento foi inserido na lista.
+ * Retorna 0 se o elemento existe na lista.
  * Retorna 1 se a posição informada não está correta.
+ * Retorna 3 se a lista estiver vazia.
  */
 template <typename T>
 int StaticList<T>::get(int pos, T& result) {
-    if(pos < 0 || pos >= num_elements)
-        return 1;
+    if(isEmpty())
+        return 3;
     else {
-        result = elements[pos];
-        return 0;
+        if(pos < 0 || pos >= num_elements)
+            return 1;
+        else {
+            result = elements[pos];
+            return 0;
+        }
     }
 }
 
 
 /**
- * Implementação funciona para tipos: int, float, double, char e string
+ * Implementação funciona para os tipos: int, float, double, char e string
  */
 template <typename T>
-int StaticList<T>::search(T& element) {
+int StaticList<T>::search(const T& element) {
     for(int i = 0; i < num_elements; i++)
         if(element == elements[i])
             return i;
