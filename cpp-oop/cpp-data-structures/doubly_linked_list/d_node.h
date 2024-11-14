@@ -18,10 +18,10 @@ class DNode {
         T element;
 
         // A pointer for the previous element
-        Node<T>* previous;
+        DNode<T>* previous;
 
         // A pointer for the next element
-        Node<T>* next;
+        DNode<T>* next;
     public:
         DNode(T element);
         T getElement() const;
