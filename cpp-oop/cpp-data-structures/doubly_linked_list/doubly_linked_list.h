@@ -163,28 +163,28 @@ int DoublyLinkedList<T>::insert(T element, int pos)
  * Retorna 3 se a lista estiver vazia.
  */
 template <typename T>
-int DoublyLinkedList<T>::removeFirst(T &result)
-{
-    if (isEmpty())
-        return 3;
+int DoublyLinkedList<T>::removeFirst(T &result) {
+    if (isEmpty()) return 3;
 
     // Guarda a referência do elemento sendo removido
     result = head->getElement();
 
     // Se a lista possui um único elemento: head e tail = nullptr
-    if (head == tail)
-    {
+    if (head == tail) {
         head = nullptr;
         tail = nullptr;
-    }
-    else
-    {
+    } else {
         // Senão, o segundo elemento será o head
         head = head->getNext();
+
+        // O ponteiro desse novo primeiro elemento passa a ser null
+        head->previous = nullptr;
     }
 
-    // Ajusta o total de elementos e retorna o removido
+    // Ajusta o total de elementos
     num_elements--;
+
+    // retorna sem erros
     return 0;
 }
 
@@ -194,35 +194,28 @@ int DoublyLinkedList<T>::removeFirst(T &result)
  * Retorna 3 se a lista estiver vazia.
  */
 template <typename T>
-int DoublyLinkedList<T>::removeLast(T &result)
-{
-    if (isEmpty())
-        return 3;
+int DoublyLinkedList<T>::removeLast(T &result) {
+    if (isEmpty()) return 3;
 
     // Guarda uma referência do elemento sendo removido
     result = tail->getElement();
 
     // Se a lista possui um único elemento: head e tail = nullptr
-    if (head == tail)
-    {
+    if (head == tail) {
         head = nullptr;
         tail = nullptr;
-    }
-    else
-    {
-        // Senão, necessário percorrer o encadeamento até chegar ao nó
-        // imediatamente anterior ao último
-        DNode<T> *prev = head;
-        while (prev->getNext() != tail)
-            prev = prev->getNext();
+    } else {
+        // Senão, traz tail para o nó anterior
+        tail = tail->getPrevious();
 
-        // Atualiza tail
-        tail = prev;
-        prev->setNext(nullptr);
+        // Atualiza o ponteiro next do tail para null
+        tail->next = nullptr;
     }
 
-    // Ajusta o total de elementos e retorna o removido
+    // Ajusta o total de elementos
     num_elements--;
+
+    // retorna sem erros
     return 0;
 }
 
@@ -232,36 +225,37 @@ int DoublyLinkedList<T>::removeLast(T &result)
  * Retorna 1 se a posição informada não estiver correta.
  */
 template <typename T>
-int DoublyLinkedList<T>::remove(int pos, T &result)
-{
-    if (pos < 0 || pos >= num_elements)
-        return 1;
+int DoublyLinkedList<T>::remove(int pos, T &result) {
+    if (pos < 0 || pos >= num_elements) return 1;
 
-    if (pos == 0)
-        removeFirst(result);
-    else
-    {
-        if (pos == num_elements - 1)
-            removeLast(result);
-        else
-        { // Remoção do meio da lista
+    if (pos == 0) removeFirst(result);
+
+    else {
+        if (pos == num_elements - 1) removeLast(result);
+        else { 
+            // Remoção do meio da lista
             // Localiza o nós imediatamente anterior à posição de onde o
             // elemento será removido
             DNode<T> *prev = head;
+    
             for (int i = 0; i < pos - 1; i++)
                 prev = prev->getNext();
 
             // Guarda uma referência do elemento que será removido
             result = prev->getNext()->getElement();
 
+            // Ajusta o previous para pular o nó removido
+            prev->getNext()->getNext()->setPrevious(&prev);
+
             // Ajusta o encadeamento "pulando" o nó removido
             prev->setNext(prev->getNext()->getNext());
 
-            // Ajusta o total de elementos e retorna o elemento removido
+            // Ajusta o total de elementos
             num_elements--;
         }
     }
 
+    // retorna sem erros
     return 0;
 }
 
