@@ -171,7 +171,7 @@ int DoublyLinkedList<T>::removeFirst(T &result) {
         head = head->getNext();
 
         // O ponteiro desse novo primeiro elemento passa a ser null
-        head->previous = nullptr;
+        head->setPrevious(nullptr);
     }
 
     // Ajusta o total de elementos
@@ -202,7 +202,7 @@ int DoublyLinkedList<T>::removeLast(T &result) {
         tail = tail->getPrevious();
 
         // Atualiza o ponteiro next do tail para null
-        tail->next = nullptr;
+        tail->setNext(nullptr);
     }
 
     // Ajusta o total de elementos
@@ -238,7 +238,7 @@ int DoublyLinkedList<T>::remove(int pos, T &result) {
             result = prev->getNext()->getElement();
 
             // Ajusta o previous para pular o nó removido
-            prev->getNext()->getNext()->setPrevious(&prev);
+            prev->getNext()->getNext()->setPrevious(prev);
 
             // Ajusta o encadeamento "pulando" o nó removido
             prev->setNext(prev->getNext()->getNext());
