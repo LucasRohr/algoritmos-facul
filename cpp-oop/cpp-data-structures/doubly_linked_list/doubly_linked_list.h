@@ -290,14 +290,18 @@ int DoublyLinkedList<T>::search(const T &element) {
 
 template <typename T>
 void DoublyLinkedList<T>::print() {
-    DNode<T> *node = head;
+    int default_code = -1; // Define um código de retorno default para a chamada  das funções
+    int& result = default_code; // Inicializa uma variável de referência com o código padrão
 
-    for (int i = 0; i < num_elements; i++) {
-        cout << node->getElement() << " ";
-        node = node->getNext();
+    cout << "==== ELEMENTOS NA LISTA ====" << endl;
+
+    int num_elements = numElements();
+
+    for(int i = 0; i < num_elements; i++) {
+        if(get(i, result) == 0) {
+            cout << result << " "; 
+        }
     }
-
-    cout << endl;
 }
 
 #endif
