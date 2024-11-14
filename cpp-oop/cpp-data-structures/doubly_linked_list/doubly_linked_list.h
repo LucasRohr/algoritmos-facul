@@ -1,4 +1,10 @@
 /**
+ * Authors:
+ * Pietro do Couto Freitas
+ * Lucas Rohr Carreño
+ */
+
+/**
  * Implementação de uma lista linear com armazenamento dinâmico, baseado em nós
  * com encadeamento em duplo sentido (duplamente encadeada).
  */

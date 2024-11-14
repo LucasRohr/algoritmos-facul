@@ -1,4 +1,10 @@
 /**
+ * Authors:
+ * Pietro do Couto Freitas
+ * Lucas Rohr Carreño
+ */
+
+/**
  * Classe/interface que define o comportamento de uma lista linear.
  */
 

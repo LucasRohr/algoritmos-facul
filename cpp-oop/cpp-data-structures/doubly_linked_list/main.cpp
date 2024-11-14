@@ -1,4 +1,8 @@
-// Lucas Rohr Carreño e Pietro do Couto Freitas
+/**
+ * Authors:
+ * Pietro do Couto Freitas
+ * Lucas Rohr Carreño
+ */
 
 #include <iostream>
 #include "doubly_linked_list.h"
