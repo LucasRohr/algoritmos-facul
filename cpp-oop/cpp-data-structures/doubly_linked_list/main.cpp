@@ -44,7 +44,44 @@ int main() {
             cout << result << " "; 
     }
 
-    cout << "\n";
+    cout << endl;
+
+    int removedFirst;
+    int removedLast;
+    int removed;
+
+    /**
+     * Remove o elemento no início da lista.
+     */
+    dll.removeFirst(removedFirst);
+
+    cout << "Elemento removido do inicio: " << removedFirst << endl;
+
+    /**
+     * Remove o elemento no fim da lista.
+     */
+    dll.removeLast(removedLast);
+
+    cout << "Elemento removido do fim: " << removedLast << endl;
+
+    /**
+     * Remove o elemento na posição 1.
+     */
+    dll.remove(1, removed);
+
+    cout << "Elemento removido da posição 1: " << removed << endl;
+
+    /**
+     * Imprime os elementos da lista.
+     */
+    cout << "==== ELEMENTOS NA LISTA ====" << endl;
+    num_elements = dll.numElements();
+    for(int i = 0; i < num_elements; i++) {
+        if(dll.get(i, result) == 0)
+            cout << result << " "; 
+    }
+
+    cout << endl;
 
     return 0;
 }
