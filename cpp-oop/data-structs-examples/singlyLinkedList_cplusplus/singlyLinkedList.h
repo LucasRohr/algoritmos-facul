@@ -31,6 +31,7 @@ class SinglyLinkedList: public List<T> {
         int remove(int pos, T& result);
         int get(int pos, T& result);
         int search(const T& element);
+        int split(T divisor, SinglyLinkedList<T>& nl);
 };
 
 /**
@@ -269,6 +270,36 @@ int SinglyLinkedList<T>::search(const T& element) {
 
     // Se chegar até aqui, o elemento não foi encontrado
     return -1;
+}
+
+/**
+ * Divide a lista com base num elemento divisor
+ * Retorna 0 se a divisao for possível
+ * Retorna 3 se a lista estiver vazia.
+ */
+template <typename T>
+int SinglyLinkedList<T>::split(T divisor, SinglyLinkedList<T>& nl) {
+    if(isEmpty()) {
+        return 3;
+    }
+
+    Node<T>* current = head;
+    int i = 0;
+    T removed;
+
+    nl.insertFirst(head->getElement()); // Insere o primeiro elemento na nova lista
+
+    // Até achar o divisor, insere os elementos na nova lista e remove da lista corrente
+    while(current->getElement() != divisor) {
+        i++;
+        current = current->getNext();
+        nl.insertLast(current->getElement());
+        removeFirst(removed);
+    }
+
+    removeFirst(removed); // Remove o divisor que ficou no inicio da lista corrente
+
+    return 0;
 }
 
 #endif

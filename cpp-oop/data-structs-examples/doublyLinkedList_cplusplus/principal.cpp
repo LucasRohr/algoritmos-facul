@@ -8,6 +8,23 @@
 
 using namespace std;
 
+bool check_sorted_dll(DoublyLinkedList<int> dll) {
+    DNode<int>* element = dll.head;
+    bool is_sorted = true;
+
+    // Enquanto a flag é true e a lista nao chegou no fim, laço
+    while (is_sorted == true && element->getNext() != nullptr) {
+        // Se o elemento atual é maior que o próximo, nao esta sorted
+        if (element->getElement() > element->getNext()->getElement()) {
+            is_sorted = false;
+        }
+
+        element = element->getNext(); // Atualiza para o proximo elemento
+    }
+
+    return is_sorted;
+}
+
 int main() {
     DoublyLinkedList<int> dll;  // Cria uma lista duplamente encadeada de tipo int
 
@@ -40,6 +57,8 @@ int main() {
             cout << result << " "; 
     }
     cout << "\n";
+
+    cout << "check_sorted_dll(dll) = " << (check_sorted_dll(dll) == true ? "Ordenada" : "Não ordenada") << endl;
 
     return 0;
 }
